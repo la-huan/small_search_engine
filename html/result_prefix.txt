@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>搜索结果</title>
+<style type="text/css">
+* {
+	box-sizing: border-box;
+	font-size: 26px;
+	padding: 0;
+	margin: 0;
+}
+
+#header, #header a {
+	color: white;
+	background-color: #12a7ff;
+	height: 60px;
+	font-size: 32px;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	font-weight: 500;
+	font-family: "Microsoft YaHei", "宋体", "Segoe UI", "Lucida Grande",
+		Helvetica, Arial, sans-serif, FreeSans, Arimo;
+}
+
+#container {
+	
+}
+xmp{
+	white-space:normal;
+}
+</style>
+</head>
+<body>
+
+	<div id="header">
+		&nbsp;&nbsp;<a href="/index"> 搜索引擎DEMO</a>-搜索结果
+	</div>
+
+	<div id="container">
