@@ -1,107 +1,122 @@
 
 <!DOCTYPE html>
 <html>
-<head>  
-    <title>搜索页面</title>
-	<style type="text/css">
-		* {
-			box-sizing:border-box;
-			font-size:26px;
-			padding:0;
-			margin:0;
-		}
-		#header,#header a{
-			color:white;
-			background-color:#12a7ff;
-			height:60px;
-			font-size:32px;
-		}
-		body {
-			margin:0;
-			padding:0;
-			font-weight:500;
-			font-family:"Microsoft YaHei","宋体","Segoe UI","Lucida Grande",Helvetica,Arial,sans-serif,FreeSans,Arimo;
-		}
-		#container {
-			width:500px;
-			height:820px;
-			margin:0 auto;
-		}
-		div.search {
-			padding:10px 0;
-		}
-		.search_form {
-			position:relative;
-			width:300px;
-			margin:0 auto;
-		}
-		.middle {
-			position:relative;
-			width:300px;
-			margin:0 auto;
-		}
-		input,button {
-			border:none;
-			outline:none;
-		}
-		input {
-			width:100%;
-			height:122px;
-			padding-left:13px;
-		}
-		button {
-			height:122px;
-			width:82px;
-			cursor:pointer;
-			position:absolute;
-		}
-		
-		/*搜索框7*/
-			  
-		.bar7 .search_form {
-			height:122px;
-		}
-		.bar7 input {
-			width:550px;
-			border-radius:42px;
-			border:2px solid #324B4E;
-			background:#F9F0DA;
-			transition:.3s linear;
-			float:right;
-		}
-		.bar7 input:focus {
-			width:650px;
-		}
-		.bar7 button {
-			background:none;
-			top:-2px;
-			right:20px;
-			
-		}
-		.bar7 button:before {
-			content:"查找";
-			font-family:FontAwesome;
-			color:black;
-		}
-		
+<head>
+<title>搜索页面</title>
+<style type="text/css">
+* {
+	box-sizing: border-box;
+	font-size: 26px;
+	padding: 0;
+	margin: 0;
+}
 
-	</style>
+#header, #header a {
+	color: white;
+	background-color: #12a7ff;
+	height: 60px;
+	font-size: 32px;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	font-weight: 500;
+	font-family: "Microsoft YaHei", "宋体", "Segoe UI", "Lucida Grande",
+		Helvetica, Arial, sans-serif, FreeSans, Arimo;
+}
+
+#container {
+	width: 500px;
+	height: 820px;
+	margin: 0 auto;
+}
+
+div.search {
+	padding: 10px 0;
+}
+
+.search_form {
+	position: relative;
+	width: 300px;
+	margin: 0 auto;
+}
+
+.middle {
+	position: relative;
+	width: 300px;
+	margin: 0 auto;
+}
+
+input, button {
+	border: none;
+	outline: none;
+}
+
+input {
+	width: 100%;
+	height: 122px;
+	padding-left: 13px;
+}
+
+button {
+	height: 122px;
+	width: 82px;
+	cursor: pointer;
+	position: absolute;
+}
+
+/*搜索框7*/
+.bar7 .search_form {
+	height: 122px;
+}
+
+.bar7 input {
+	width: 550px;
+	border-radius: 42px;
+	border: 2px solid #324B4E;
+	background: #F9F0DA;
+	transition: .3s linear;
+	float: right;
+}
+
+.bar7 input:focus {
+	width: 650px;
+}
+
+.bar7 button {
+	background: none;
+	top: -2px;
+	right: 20px;
+}
+
+.bar7 button:before {
+	content: "查找";
+	font-family: FontAwesome;
+	color: black;
+}
+</style>
 </head>
 <body>
 
-	<div id="header">&nbsp;&nbsp;	<a href="/index"> 搜索引擎DEMO</a></div>
-	<br><br><br>
+	<div id="header">
+		&nbsp;&nbsp; <a href="/index"> 搜索引擎DEMO</a>
+	</div>
+	<br>
+	<br>
+	<br>
 	<div id="container">
-		
+
 
 		<div class="search bar7">
 			<div class='search_form'>
-				<input type="text" id="search_text_input" placeholder="请输入搜索内容" name="crid">
-				<button type="submit" id="search_submit_button"  onclick="search()"></button>
+				<input type="text" id="search_text_input" placeholder="请输入搜索内容"
+					name="crid">
+				<button type="submit" id="search_submit_button" onclick="search()"></button>
 			</div>
 		</div>
 
-		
+
 	</div>
 	<script type="text/javascript">
 		function search(){	
@@ -110,6 +125,14 @@
 				alert('请输入内容');
 			else
 				location.href="/search/"+words
+		}
+		document.onkeydown = function (e) { // 回车提交表单
+			// 兼容FF和IE和Opera
+		    var theEvent = window.event || e;
+		    var code = theEvent.keyCode || theEvent.which || theEvent.charCode;
+		    if (code == 13) {
+		        search();
+		    }
 		}
 	</script>
 </body>
