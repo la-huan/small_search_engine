@@ -46,9 +46,9 @@
 
 ## 功能
 
-### 爬取功能
+### 爬取功能入口
 
-主入口在common.env.get.GetEnvManager类里
+主入口在com.lahuan.test.TestWebcrawler类里
 
 爬取阈值在com.lahuan.common.config.GlobelConfig.MONITOR_THREAD_THRESHOLD
 
@@ -59,26 +59,25 @@
 ```java
 package com.lahuan.test;
 
-import com.lahuan.common.env.get.GetEnvManager;
+import com.lahuan.common.env.webcrawler.WebcrawlerEnvManager;
 
-public class TestGet {
+public class TestWebcrawler {
 
 	public static void main(String[] args) {
-		// 初始化 使用文件夹test2
-		GetEnvManager.init();
+		// 初始化  使用文件夹test2
+		WebcrawlerEnvManager.init("temp");
 		// 开始查找
-		GetEnvManager.start();
-      	//爬取阈值在com.lahuan.common.config.GlobelConfig.MONITOR_THREAD_THRESHOLD
-		//当分析队列达到阈值后，就会停止（定时检测）。
-	
+		WebcrawlerEnvManager.start();
+		//爬取阈值在com.lahuan.common.config.GlobelConfig.MONITOR_THREAD_THRESHOLD
+				//当分析队列达到阈值后，就会停止（定时检测）。
 	}
 }
 
 ```
 
-### 搜索功能
+### 搜索功能入口
 
-主入口在common.env.query.QueryEnv类里
+主入口在com.lahuan.test.TestSearch类里
 
 参考
 
@@ -100,7 +99,7 @@ public class TestSearch {
 
 ```
 
-###  服务器功能
+###  服务器功能入口
 
 主入口在com.lahuan.common.env.query.ServerEnvManager;
 
