@@ -24,4 +24,9 @@ public interface PersistenceOffset {
 	 * @return
 	 */
 	public int getSize();
+	/**
+	 * 获取最大索引
+	 * @return
+	 */
+	public int getMaxIdx();
 }

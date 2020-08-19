@@ -68,7 +68,7 @@ public class URLBinarySearcher implements URLSearcher {
 	 */
 	private void query(Long id, List<ResultMapping> res) {
 		long s = 0;// 索引下界
-		long e = persistenceOffset.getSize();// 索引上界
+		long e = persistenceOffset.getMaxIdx();// 索引上界
 		long m;// 中间索引
 		ResultMapping mVal;// 中间索引的值
 		while (s <= e) {

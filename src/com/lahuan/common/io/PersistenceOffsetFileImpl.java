@@ -77,9 +77,18 @@ public class PersistenceOffsetFileImpl implements PersistenceOffset {
 	@Override
 	public int getSize() {
 		try {
-			return (int) (rdFile.length()/(LONG_SIZE))-1;
-		
+			return (int) (rdFile.length()/(LONG_SIZE)) - 1;
 		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return -1;
+	}
+	//最大索引
+	@Override
+	public int getMaxIdx() {
+		try {
+			return getSize()-1;
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return -1;

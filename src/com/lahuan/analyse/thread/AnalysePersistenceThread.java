@@ -45,6 +45,7 @@ public class AnalysePersistenceThread extends Thread{
 		List<Long> list = new ArrayList<Long>(set);
 		List<Long> offsets = new ArrayList<Long>();
 		Collections.sort(list);
+		offsets.add(0L);//首先加个0
 		for (Long id : list) {
 			Collection<Long> collection = all.get(id);
 			String line = id + collection.toString();
